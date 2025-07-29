@@ -1,0 +1,16 @@
+INSERT INTO customers VALUES ('C001', 'Alice', '9876543210', 'Gold');
+INSERT INTO customers VALUES ('C002', 'Bob', '9123456780', 'Silver');
+INSERT INTO customers VALUES ('C003', 'Charlie', '9988776655', 'Gold');
+INSERT INTO customers VALUES ('C004', 'Diana', '9112233445', 'Platinum');
+INSERT INTO calls VALUES ('CL001', 'C001', '2025-07-01', 5, 10.0);
+INSERT INTO calls VALUES ('CL002', 'C001', '2025-07-15', 10, 20.0);
+INSERT INTO calls VALUES ('CL003', 'C002', '2025-07-10', 3, 6.0);
+INSERT INTO calls VALUES ('CL004', 'C003', '2025-07-12', 8, 16.0);
+INSERT INTO calls VALUES ('CL005', 'C004', '2025-07-14', 15, 30.0);
+INSERT INTO plans VALUES ('Gold', 499, 1.0);
+INSERT INTO plans VALUES ('Silver', 299, 1.2);
+INSERT INTO plans VALUES ('Platinum', 799, 0.8);
+INSERT INTO payments VALUES ('P001', 'C001', 500, '2025-07-05');
+INSERT INTO payments VALUES ('P002', 'C002', 300, '2025-07-07');
+INSERT INTO payments VALUES ('P003', 'C003', 700, '2025-07-10');
+INSERT INTO payments VALUES ('P004', 'C004', 800, '2025-07-11');
