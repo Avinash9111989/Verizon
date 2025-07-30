@@ -1,0 +1,41 @@
+package com.cglia.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author postgresqltutorial.com
+ */
+public class JDBCExample1{
+
+    private final String url = "jdbc:postgresql://localhost/practice";
+    private final String user = "root";
+    private final String password = "admin";
+
+    /**
+     * Connect to the PostgreSQL database
+     *
+     * @return a Connection object
+     */
+    public Connection connect() {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Connected to the PostgreSQL server successfully.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return conn;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        JDBCExample1 app = new JDBCExample1();
+        app.connect();
+    }
+}
