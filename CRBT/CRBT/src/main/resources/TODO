@@ -1,0 +1,14 @@
+1. Exception code blocks try,catch define for
+all methods(user-defined exceptions)
+
+2. unsubcribe and generate bill methods implementation
+
+
+3. RunTest file & Test classes to be created for all
+java classes
+
+
+4. procedures atleast 2 should be done
+
+
+Dont forget to add Junit dependency in pom.xml
