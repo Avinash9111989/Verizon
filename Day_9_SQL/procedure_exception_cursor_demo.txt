@@ -1,0 +1,55 @@
+DELIMITER $$
+
+CREATE PROCEDURE DeductMonthlyFee()
+BEGIN
+    -- Variable Declarations
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE v_id VARCHAR(20);
+    DECLARE v_balance DECIMAL(10,2);
+
+    -- Exception message variables (optional)
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    -- Custom Exception Handler (optional - prints error)
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- You can log this error into a separate table instead of SELECT
+        SELECT 'An error occurred during deduction. Transaction rolled back.' AS error_msg;
+        ROLLBACK;
+    END;
+
+    START TRANSACTION;
+
+    -- Cursor Declaration
+    DECLARE cur CURSOR FOR
+        SELECT customer_id, balance FROM customers WHERE plan_type = 'Silver';
+
+    -- Open Cursor
+    OPEN cur;
+
+    -- Loop Through Rows
+    read_loop: LOOP
+        FETCH cur INTO v_id, v_balance;
+
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        -- Business Logic: Deduct Rs. 50
+        IF v_balance < 50 THEN
+            -- Optional: Raise custom error if balance is insufficient
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = CONCAT('Insufficient balance for customer: ', v_id);
+        END IF;
+
+        UPDATE customers
+        SET balance = v_balance - 50
+        WHERE customer_id = v_id;
+    END LOOP;
+
+    CLOSE cur;
+
+    COMMIT;
+END $$
+
+DELIMITER ;

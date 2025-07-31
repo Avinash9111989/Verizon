@@ -1,0 +1,7 @@
+For calling procedure
+------------------------------
+call DeductMonthlyFee();
+-------------------------------
+For droping procedure
+----------------------------------
+drop procedure DeductMonthlyFee
