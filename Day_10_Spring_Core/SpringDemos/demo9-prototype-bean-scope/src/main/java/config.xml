@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="reportService" class="com.infosys.demo.ReportService" scope="prototype" >
+		<property name="master" ref="htmlReportGenerator" />
+		<property name="recordsPerPage" value="500" />
+	</bean>
+	
+	<bean id="htmlReportGenerator" class="com.infosys.demo.HTMLReportGenerator" />
+	
+	<bean id="pdfReportGenerator" class="com.infosys.demo.PDFReportGenerator" />
+
+
+
+</beans>
