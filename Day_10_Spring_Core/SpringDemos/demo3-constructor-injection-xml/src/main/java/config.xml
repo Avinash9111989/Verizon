@@ -12,6 +12,6 @@
 	</bean>
 	<bean id="htmlReportGenerator" class="com.infosys.demo.HTMLReportGenerator" />
 
-	<bean id="pdfReportGenerator" class="com.infosys.demo.PDFReportGenerator" />
-
+<!-- <bean id="pdfReportGenerator" class="com.infosys.demo.PDFReportGenerator" />
+-->
 </beans>

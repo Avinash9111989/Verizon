@@ -1,0 +1,6 @@
+com\infosys\demo\PDFReportGenerator.class
+com\infosys\demo\ReportGenerator.class
+com\infosys\demo\Client.class
+com\infosys\demo\HTMLReportGenerator.class
+com\infosys\demo\ReportService.class
+com\infosys\demo\LoggingAspect.class
