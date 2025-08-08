@@ -1,3 +1,4 @@
+create database usersdb
 
 Simple microservices gateway demo (no Docker).
 Structure:
