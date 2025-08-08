@@ -1,0 +1,4 @@
+com\example\gateway\controller\AuthController.class
+com\example\gateway\ApiGatewayApplication.class
+com\example\gateway\filter\JwtGlobalFilter.class
+com\example\gateway\util\JwtUtil.class
